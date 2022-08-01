@@ -77,18 +77,18 @@ class Vehicles(Base):
 
 class Favorite_peoples(Base):
     __tablename__ = 'Favorite_peoples'
-    id = Column(Integer, ForeignKey('Peoples.id'))
-    user_id = Column(Integer, ForeignKey('Users.id'), primary_key=True,)
+    id = Column(Integer, ForeignKey('Peoples.id'), primary_key=True,)
+    user_id = Column(Integer, ForeignKey('Users.id'), nullable=False)
 
 class Favorite_planets(Base):
     __tablename__ = 'Favorite_planets'
-    id = Column(Integer, ForeignKey('Planets.id'))
-    user_id = Column(Integer, ForeignKey('Users.id'), primary_key=True,)
+    id = Column(Integer, ForeignKey('Planets.id'), primary_key=True)
+    user_id = Column(Integer, ForeignKey('Users.id'), nullable=False)
 
 class Favorite_vehicles(Base):
     __tablename__ = 'Favorite_vehicles'
-    id = Column(Integer, ForeignKey('Vehicles.id'))
-    user_id = Column(Integer, ForeignKey('Users.id'), primary_key=True,)
+    id = Column(Integer, ForeignKey('Vehicles.id'), primary_key=True)
+    user_id = Column(Integer, ForeignKey('Users.id'), nullable=False)
 
 
 
